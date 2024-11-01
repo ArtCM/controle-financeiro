@@ -83,7 +83,7 @@ export default function Home() {
                   <td>R$ {(expense.amount / 100).toFixed(2)}</td>
                   <td>{new Date(expense.date).toLocaleDateString('pt-BR')}</td>
                   <td>
-                    <button onClick={() => handleDeleteExpense(expense.id)}>
+                    <button onClick={() => expense.id !== undefined && handleDeleteExpense(expense.id)}>
                       <Image src={Trash} alt="Trash" />
                     </button>
                   </td>

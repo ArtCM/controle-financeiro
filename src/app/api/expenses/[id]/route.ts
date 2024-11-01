@@ -1,12 +1,12 @@
 import { NextResponse } from 'next/server';
 import { ExpenseModel } from '../../../../models/ExpenseModel';
 
-export async function PUT(request: Request, { params }: { params: { id: string } }) {
-  const { id } = params;
+export async function PUT(request: Request, { params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
 
-  const { category, amount, date }: { category: string; amount: number; date: string } = await request.json();
-  
-  const updatedExpense = await ExpenseModel.update(parseInt(id, 10), { 
+  const { category, amount, date } = await request.json();
+
+  const updatedExpense = await ExpenseModel.update(parseInt(id), { 
     category,
     amount: amount * 100, 
     date: new Date(date),
@@ -15,10 +15,9 @@ export async function PUT(request: Request, { params }: { params: { id: string }
   return NextResponse.json(updatedExpense);
 }
 
-export async function DELETE(request: Request, { params }: { params: { id: string } }) {
-  const { id } = params;
+export async function DELETE(request: Request, { params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
 
-  await ExpenseModel.delete(parseInt(id, 10)); 
-  
+  await ExpenseModel.delete(parseInt(id));
   return NextResponse.json(null, { status: 204 });
 }

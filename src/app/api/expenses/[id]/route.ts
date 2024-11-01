@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
 import { ExpenseModel } from '../../../../models/ExpenseModel';
 
-export async function PUT(request: Request, context: { params: { id: string } }) {
-  const { id } = context.params; 
+export async function PUT(request: Request, { params }: { params: { id: string } }) {
+  const { id } = params;
 
   if (!id) {
     return NextResponse.json({ error: 'ID is required' }, { status: 400 });
@@ -12,7 +12,7 @@ export async function PUT(request: Request, context: { params: { id: string } })
 
   const updatedExpense = await ExpenseModel.update(parseInt(id), {
     category,
-    amount: parseInt(amount.toString()) * 100,
+    amount: amount * 100,
     date: new Date(date),
   });
 
@@ -23,8 +23,8 @@ export async function PUT(request: Request, context: { params: { id: string } })
   return NextResponse.json(updatedExpense);
 }
 
-export async function DELETE(request: Request, context: { params: { id: string } }) {
-  const { id } = context.params;
+export async function DELETE(request: Request, { params }: { params: { id: string } }) {
+  const { id } = params;
 
   if (!id) {
     return NextResponse.json({ error: 'ID is required' }, { status: 400 });

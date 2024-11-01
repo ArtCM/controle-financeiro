@@ -60,8 +60,6 @@ DATABASE: railway
 USER: root
 PSS: rnVSCMxKZBXTqwewgLMatYHQXeBTLHaW
 PRIVATE DOMAIN: autorack.proxy.rlwy.net:45271
-
-URL: mysql://root:rnVSCMxKZBXTqwewgLMatYHQXeBTLHaW@autorack.proxy.rlwy.net:45271/railway
 ~~~
 
 ~~~

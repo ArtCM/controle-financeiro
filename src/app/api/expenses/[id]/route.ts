@@ -3,12 +3,11 @@ import { ExpenseModel } from '../../../../models/ExpenseModel';
 
 export async function PUT(request: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
+  const { category, amount, date }: { category: string; amount: number; date: string } = await request.json();
 
-  const { category, amount, date } = await request.json();
-
-  const updatedExpense = await ExpenseModel.update(parseInt(id), { 
+  const updatedExpense = await ExpenseModel.update(parseInt(id, 10), {
     category,
-    amount: amount * 100, 
+    amount: amount * 100,
     date: new Date(date),
   });
 
@@ -17,7 +16,6 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
 
 export async function DELETE(request: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-
-  await ExpenseModel.delete(parseInt(id));
+  await ExpenseModel.delete(parseInt(id, 10));
   return NextResponse.json(null, { status: 204 });
 }

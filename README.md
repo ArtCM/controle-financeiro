@@ -1,36 +1,108 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div markdown="1">
 
-## Getting Started
+# Desafios Code Explorer
 
-First, run the development server:
+<br>
+Arthur Correa - Desenvolvedor Front-end
+<br><br>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-000?style=for-the-badge&logo=linkedin&logoColor=0E76A8)](https://www.linkedin.com/in/arthurcorream/)
+[![Instagram](https://img.shields.io/badge/Instagram-000?style=for-the-badge&logo=instagram)](https://www.instagram.com/arthurcoorrea/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ver: 0.0.1 - Last update: 01/11/2024
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<br>
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+</div>
 
-## Learn More
+<div markdown="1">
 
-To learn more about Next.js, take a look at the following resources:
+# Sobre
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+O projeto consiste em um lista de despesas pra adicionar e remove-lás, exibe uma listagem de todas as despesas do banco na home, um button que aciona um modal com form para adicionar despesas.
+O form possui validações para previnir SQL Injection e atualiza conforme é adicionado.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+A aplicação é um monolito com Next 15, React, Typescript, Prisma, Mysql2 e Mysql.
 
-## Deploy on Vercel
+<br>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Preview:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## [Clique aqui e veja a aplicação](https://controle-financeiro-git-main-arthur-correas-projects.vercel.app)
+
+~~~
+https://controle-financeiro-git-main-arthur-correas-projects.vercel.app
+~~~
+
+<br>
+
+# Tecnologias Utilizadas:
+- Node.js v22.11.1
+- React
+- Next 15
+- HTML
+- CSS
+- JavaScript
+- Tailwind.css
+- Git
+- Mysql2
+- Prisma
+- Mysql
+- Normalize CSS v8.0.1
+---------
+
+<br>
+
+# Credenciais e Estrutura do Banco
+
+~~~
+DATABASE: railway
+USER: root
+PSS: rnVSCMxKZBXTqwewgLMatYHQXeBTLHaW
+PRIVATE DOMAIN: autorack.proxy.rlwy.net:45271
+
+URL: mysql://root:rnVSCMxKZBXTqwewgLMatYHQXeBTLHaW@autorack.proxy.rlwy.net:45271/railway
+~~~
+
+~~~
+table: Expense
+    |
+    -- id
+    |
+    -- category
+    |
+    -- amount
+    |
+    -- date
+~~~
+
+<br>
+
+Inicialização
+---------
+- Necessário Node.js v18.20 ou superior
+- Rodar o comando `npm i` na pasta raiz da aplicação para instalação dos packages.
+- Após, rodar `npm run dev` para inicializar a aplicação.
+- Acessar a aplicação localmente pela porta padrão.
+---------
+<br>
+
+# Nomenclatura de commits
+- docs: apenas mudanças de documentação;
+- feat: uma nova funcionalidade;
+- fix: a correção de um bug;
+- perf: mudança de código focada em melhorar performance;
+- refactor: mudança de código que não adiciona uma funcionalidade e também não corrigi um bug;
+- style: mudanças no código que não afetam seu significado (espaço em branco, formatação, ponto e vírgula, etc);
+- test: adicionar ou corrigir testes.
+  
+---------
+
+<br>
+
+# Informações adicionais
+
+- No projeto utilizo o normalize CSS v8.0.1, para promover maior compatibilidade com todos os navegadores, disponível em:
+~~~
+https://necolas.github.io/normalize.css/
+~~~

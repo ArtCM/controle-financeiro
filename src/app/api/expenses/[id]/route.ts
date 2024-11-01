@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
 import { ExpenseModel } from '../../../../models/ExpenseModel';
 
-export async function PUT(request: Request, { params }: { params: { id: string } }) {
-  const { id } = params;
+export async function PUT(request: Request, context: { params: { id: string } }) {
+  const { id } = context.params; 
 
   if (!id) {
     return NextResponse.json({ error: 'ID is required' }, { status: 400 });
@@ -23,8 +23,8 @@ export async function PUT(request: Request, { params }: { params: { id: string }
   return NextResponse.json(updatedExpense);
 }
 
-export async function DELETE(request: Request, { params }: { params: { id: string } }) {
-  const { id } = params;
+export async function DELETE(request: Request, context: { params: { id: string } }) {
+  const { id } = context.params;
 
   if (!id) {
     return NextResponse.json({ error: 'ID is required' }, { status: 400 });

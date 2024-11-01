@@ -1,0 +1,67 @@
+.add-expense{
+    @apply
+        bg-neutral-800
+        rounded-lg
+        p-10
+        min-h-[400px]
+        absolute
+        top-24
+        w-[400px]
+        max-w-[90%]
+}
+
+.add-expense__top{
+    @apply
+        flex
+        justify-between
+        mt-3
+        mb-6
+}
+
+.add-expense__top h2{
+    @apply
+        text-[20px]
+}
+
+.add-expense__top svg{
+    @apply
+        h-[25px]
+        w-[25px]
+        fill-neutral-600
+        bg-white
+        p-1
+        rounded-sm
+        hover:bg-red-500
+        hover:fill-neutral-300
+        transition-all
+}
+
+.add-expense__form{
+    @apply
+        flex
+        flex-col
+}
+
+.add-expense__form :where(input, button){
+    @apply
+        my-4
+}
+
+.add-expense__form input{
+    @apply
+        py-3
+        px-2
+        rounded-lg
+        text-neutral-700
+        placeholder-neutral-700
+}
+
+.add-expense__form button{
+    @apply
+       bg-green-600
+        py-4
+        px-4
+        hover:bg-green-400
+        hover:scale-95
+        transition-all
+}

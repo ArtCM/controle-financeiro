@@ -15,3 +15,22 @@ export async function POST(request: Request) {
   });
   return NextResponse.json(expense, { status: 201 });
 }
+
+export async function PUT(request: Request, { params }: { params: { id: string } }) {
+  const { id } = params;
+  const updatedData: Expense = await request.json();
+
+  const numericId = parseInt(id, 10);
+
+  const updatedExpense = await ExpenseModel.update(numericId, {
+    category: updatedData.category,
+    amount: parseInt(updatedData.amount.toString()) * 100,
+    date: new Date(updatedData.date),
+  });
+
+  if (!updatedExpense) {
+    return NextResponse.json({ message: 'Expense not found' }, { status: 404 });
+  }
+
+  return NextResponse.json(updatedExpense);
+}
